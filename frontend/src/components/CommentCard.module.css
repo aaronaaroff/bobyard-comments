@@ -1,0 +1,148 @@
+.card {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.authorInfo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #4a90d9;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.author {
+  font-weight: 600;
+  color: #1a1a1a;
+  font-size: 14px;
+}
+
+.date {
+  color: #888;
+  font-size: 13px;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.editBtn,
+.deleteBtn,
+.saveBtn,
+.cancelBtn {
+  border: none;
+  border-radius: 4px;
+  padding: 5px 12px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.editBtn {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.editBtn:hover {
+  background: #e0e0e0;
+}
+
+.deleteBtn {
+  background: #f0f0f0;
+  color: #d32f2f;
+}
+
+.deleteBtn:hover {
+  background: #fce4ec;
+}
+
+.saveBtn {
+  background: #4a90d9;
+  color: #fff;
+}
+
+.saveBtn:hover {
+  background: #3a7bc8;
+}
+
+.cancelBtn {
+  background: #f0f0f0;
+  color: #555;
+}
+
+.cancelBtn:hover {
+  background: #e0e0e0;
+}
+
+.text {
+  color: #333;
+  line-height: 1.5;
+  margin: 0 0 10px;
+  font-size: 15px;
+}
+
+.editArea {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 15px;
+  line-height: 1.5;
+  resize: vertical;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.editArea:focus {
+  outline: none;
+  border-color: #4a90d9;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 280px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  object-fit: contain;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+}
+
+.likes {
+  color: #666;
+  font-size: 13px;
+  font-weight: 500;
+}
