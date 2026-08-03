@@ -8,7 +8,7 @@ class Command(BaseCommand):
     help = 'Seed the database with comments from the provided JSON file'
 
     def handle(self, *args, **options):
-        json_path = Path(__file__).resolve().parents[4] / 'Copy of comments.json'
+        json_path = Path(__file__).resolve().parents[4] / 'comments_threaded.json'
 
         with open(json_path) as f:
             data = json.load(f)
@@ -17,6 +17,7 @@ class Command(BaseCommand):
 
         comments = [
             Comment(
+                parent=c['parent'],
                 author=c['author'],
                 text=c['text'],
                 date=c['date'],

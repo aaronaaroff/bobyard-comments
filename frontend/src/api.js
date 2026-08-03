@@ -6,7 +6,7 @@ export async function fetchComments() {
   return res.json();
 }
 
-export async function createComment(text) {
+export async function createComment(text, parentId = null) {
   const res = await fetch(BASE_URL, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -16,6 +16,7 @@ export async function createComment(text) {
       date: new Date().toISOString(),
       likes: 0,
       image: '',
+      parent: parentId,
     }),
   });
   if (!res.ok) throw new Error('Failed to create comment');
