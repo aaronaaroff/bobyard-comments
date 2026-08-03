@@ -4,5 +4,5 @@ from .serializers import CommentSerializer
 
 
 class CommentViewSet(viewsets.ModelViewSet):
-    queryset = Comment.objects.all()
+    queryset = Comment.objects.filter(parent=None)
     serializer_class = CommentSerializer

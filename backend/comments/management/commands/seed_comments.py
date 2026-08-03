@@ -15,17 +15,16 @@ class Command(BaseCommand):
 
         Comment.objects.all().delete()
 
-        comments = [
-            Comment(
-                parent=c['parent'],
+        id_map = {}
+        for c in data['comments']:
+            obj = Comment.objects.create(
+                parent=id_map.get(c['parent']),
                 author=c['author'],
                 text=c['text'],
                 date=c['date'],
                 likes=c['likes'],
                 image=c.get('image', ''),
             )
-            for c in data['comments']
-        ]
+            id_map[c['id']] = obj
 
-        Comment.objects.bulk_create(comments)
-        self.stdout.write(self.style.SUCCESS(f'Seeded {len(comments)} comments'))
+        self.stdout.write(self.style.SUCCESS(f'Seeded {len(id_map)} comments'))

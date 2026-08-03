@@ -64,19 +64,6 @@ function CommentCard({ comment, onEdit, onDelete }) {
         </div>
       </div>
 
-      {comment.replies && comment.replies.length > 0 && (
-        <div className={styles.replies}>
-          {comment.replies.map(reply => (
-            <CommentCard
-                      key={c.id}
-                      comment={c}
-                      onEdit={onEdit}
-                      onDelete={onDelete}
-            />
-          ))}
-        </div>
-      )}
-
       {isEditing ? (
         <textarea
           className={styles.editArea}
@@ -85,6 +72,19 @@ function CommentCard({ comment, onEdit, onDelete }) {
         />
       ) : (
         <p className={styles.text}>{comment.text}</p>
+      )}
+
+      {comment.replies && comment.replies.length > 0 && (
+        <div className={styles.replies}>
+          {comment.replies.map(reply => (
+            <CommentCard
+                      key={reply.id}
+                      comment={reply}
+                      onEdit={onEdit}
+                      onDelete={onDelete}
+            />
+          ))}
+        </div>
       )}
 
       {comment.image && (
